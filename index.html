@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portal interactivo de Estrategias Pedagógicas, Didácticas y de Aprendizaje en Entornos Virtuales. Visualización y desglose explicativo de infografías didácticas.">
+  <title>Estrategias Pedagógicas y Didácticas - Guía Interactiva</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- BARRA DE NAVEGACIÓN -->
+  <nav class="navbar">
+    <a href="#" class="nav-brand">
+      <i class="fa-solid fa-brain"></i>
+      <span>EduEstrategias</span>
+    </a>
+    
+    <div class="nav-controls">
+      <!-- Buscador en Tiempo Real -->
+      <div class="search-container">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="searchInput" class="search-input" placeholder="Buscar estrategia, método...">
+      </div>
+
+      <!-- Selector de Modo Oscuro/Claro -->
+      <button id="themeToggle" class="theme-toggle-btn" title="Cambiar Tema">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- CONTENEDOR PRINCIPAL -->
+  <main class="main-container">
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+      <div class="hero-badge">
+        <i class="fa-solid fa-graduation-cap"></i> Recurso Educativo e Interactivo
+      </div>
+      <h1 class="hero-title">
+        Estrategias de <span class="gradient-text">Aprendizaje y Enseñanza</span>
+      </h1>
+      <p class="hero-subtitle">
+        Explora, analiza y comprende el mapa conceptual de la didáctica, el entorno virtual de aprendizaje y las metodologías efectivas a través de infografías dinámicas.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="#galeria" class="btn btn-primary">
+          <i class="fa-solid fa-images"></i> Explorar Infografías
+        </a>
+        <a href="#profundizacion" class="btn btn-secondary">
+          <i class="fa-solid fa-layer-group"></i> Desglose Conceptual
+        </a>
+        <a href="#quiz" class="btn btn-secondary">
+          <i class="fa-solid fa-list-check"></i> Cuestionario
+        </a>
+        <a href="#creadores" class="btn btn-secondary">
+          <i class="fa-solid fa-users"></i> Creadores
+        </a>
+      </div>
+    </header>
+
+    <!-- BARRA DE FILTROS -->
+    <div class="filter-bar" id="filterContainer">
+      <button class="filter-chip active" data-filter="all">Todas las Infografías</button>
+      <button class="filter-chip" data-filter="mapa">Mapa Mental General</button>
+      <button class="filter-chip" data-filter="virtual">Entornos Virtuales (UNERG)</button>
+      <button class="filter-chip" data-filter="adquisicion">Adquisición y Estudio</button>
+    </div>
+
+    <!-- GALERÍA DE INFOGRAFÍAS (TARJETAS INTERACTIVAS) -->
+    <section id="galeria" class="gallery-grid">
+
+      <!-- TARJETA 1: MAPA MENTAL GENERAL -->
+      <article class="info-card" data-category="mapa" data-keywords="ensenanza aprendizaje didactica metodos tecnicas actividades mapa mental conceptos basicos">
+        <div class="card-img-wrapper" onclick="openLightbox('assets/estrategias_aprendizaje_mapa.png', 'Mapa Mental: Estrategias de Aprendizaje y Enseñanza')">
+          <img src="assets/estrategias_aprendizaje_mapa.png" alt="Mapa Mental Estrategias de Aprendizaje" class="card-img">
+          <div class="img-overlay-btn">
+            <i class="fa-solid fa-magnifying-glass-plus fa-2x"></i>
+            <span>Ampliar Imagen (Zoom)</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-tags">
+            <span class="tag">Didáctica</span>
+            <span class="tag">Enseñanza vs Aprendizaje</span>
+            <span class="tag">Técnicas</span>
+          </div>
+          <h3 class="card-title">Mapa Mental: Estrategias de Aprendizaje</h3>
+          <p class="card-desc">
+            Establece la diferencia clave entre las estrategias de enseñanza (foco en el docente) y las de aprendizaje (foco en el estudiante). Desglosa el embudo pedagógico desde métodos generales hasta actividades concretas.
+          </p>
+          <div class="card-actions">
+            <button class="btn btn-primary btn-sm" onclick="openLightbox('assets/estrategias_aprendizaje_mapa.png', 'Mapa Mental: Estrategias de Aprendizaje y Enseñanza')">
+              <i class="fa-solid fa-expand"></i> Ver Zoom
+            </button>
+            <button class="btn btn-secondary btn-sm" onclick="speakText('Mapa Mental Estrategias de Aprendizaje. Diferencia entre enseñanza enfocada en el docente y aprendizaje enfocado en el estudiante. Incluye pasos para lograr metas y el embudo pedagógico de métodos, técnicas y actividades.')">
+              <i class="fa-solid fa-volume-high"></i> Escuchar
+            </button>
+            <a href="#tab-comparativa" class="btn btn-secondary btn-sm" onclick="switchTab('tab-comparativa')">
+              <i class="fa-solid fa-table"></i> Comparativa
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- TARJETA 2: ENTORNOS VIRTUALES (UNERG) -->
+      <article class="info-card" data-category="virtual" data-keywords="entornos virtuales unerg gamificacion aula invertida mobile learning webinars colaborativo casos erika vicuna joseynis requena yoli lugo julio agostini pedro lozada">
+        <div class="card-img-wrapper" onclick="openLightbox('assets/estrategias_virtuales_unerg.png', 'Estrategias Didácticas en Entornos Virtuales - UNERG')">
+          <img src="assets/estrategias_virtuales_unerg.png" alt="Estrategias Didácticas en Entornos Virtuales UNERG" class="card-img">
+          <div class="img-overlay-btn">
+            <i class="fa-solid fa-magnifying-glass-plus fa-2x"></i>
+            <span>Ampliar Imagen (Zoom)</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-tags">
+            <span class="tag">Virtualidad</span>
+            <span class="tag">Gamificación</span>
+            <span class="tag">UNERG</span>
+          </div>
+          <h3 class="card-title">Estrategias en Entornos Virtuales</h3>
+          <p class="card-desc">
+            Infografía de la Universidad Nacional Experimental de los Llanos Centrales Rómulo Gallegos (UNERG). Aborda 6 dinámicas digitales: Aprendizaje Colaborativo, Gamificación, Estudio de Casos, Aula Invertida, M-Learning y Webinars.
+          </p>
+          <div class="card-actions">
+            <button class="btn btn-primary btn-sm" onclick="openLightbox('assets/estrategias_virtuales_unerg.png', 'Estrategias Didácticas en Entornos Virtuales - UNERG')">
+              <i class="fa-solid fa-expand"></i> Ver Zoom
+            </button>
+            <button class="btn btn-secondary btn-sm" onclick="speakText('Estrategias Didácticas en Entornos Virtuales. Presenta aprendizaje colaborativo, gamificación con dinámicas de juego, estudio de casos reales, aula invertida, mobile learning y seminarios web o webinars. Creado por Erika Vicuña, Joseynis Requena, Yoli Lugo, Julio Agostini y Pedro Lozada.')">
+              <i class="fa-solid fa-volume-high"></i> Escuchar
+            </button>
+            <a href="#tab-virtuales" class="btn btn-secondary btn-sm" onclick="switchTab('tab-virtuales')">
+              <i class="fa-solid fa-cubes"></i> Ver Dinámicas
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- TARJETA 3: ADQUISICIÓN DE CONOCIMIENTO -->
+      <article class="info-card" data-category="adquisicion" data-keywords="adquisicion conocimiento estudio ruta eficaz elaboracion organizacion procesamiento tecnicas ayuda anexa definicion">
+        <div class="card-img-wrapper" onclick="openLightbox('assets/adquisicion_conocimiento.png', 'Estrategias de Adquisición de Conocimiento, Estudio y Ayudas Anexas')">
+          <img src="assets/adquisicion_conocimiento.png" alt="Adquisición de Conocimiento y Estudio Eficaz" class="card-img">
+          <div class="img-overlay-btn">
+            <i class="fa-solid fa-magnifying-glass-plus fa-2x"></i>
+            <span>Ampliar Imagen (Zoom)</span>
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="card-tags">
+            <span class="tag">Cognición</span>
+            <span class="tag">Ruta de Estudio</span>
+            <span class="tag">Técnicas</span>
+          </div>
+          <h3 class="card-title">Adquisición de Conocimiento</h3>
+          <p class="card-desc">
+            Presenta las 3 grandes fases del aprendizaje consciente: Adquisición activa de información, Estrategias de elaboración y organización, y la Ruta del Estudio Eficaz estructurada en 5 pasos secuenciales.
+          </p>
+          <div class="card-actions">
+            <button class="btn btn-primary btn-sm" onclick="openLightbox('assets/adquisicion_conocimiento.png', 'Estrategias de Adquisición de Conocimiento, Estudio y Ayudas Anexas')">
+              <i class="fa-solid fa-expand"></i> Ver Zoom
+            </button>
+            <button class="btn btn-secondary btn-sm" onclick="speakText('Adquisición de conocimiento y estudio. Explica las estrategias de elaboración como paráfrasis, organización mediante esquemas y la ruta del estudio eficaz en cinco pasos: definir tema, investigar, organizar, aplicar técnicas y revisar.')">
+              <i class="fa-solid fa-volume-high"></i> Escuchar
+            </button>
+            <a href="#tab-ruta" class="btn btn-secondary btn-sm" onclick="switchTab('tab-ruta')">
+              <i class="fa-solid fa-route"></i> Ver Ruta 5 Pasos
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- SECCIÓN DE PROFUNDIZACIÓN INTERACTIVA CON PESTAÑAS -->
+    <section id="profundizacion" class="interactive-section">
+      <div class="section-header">
+        <h2 class="section-title">Desglose Conceptual y Metodológico</h2>
+        <p class="section-subtitle">Haz clic en los módulos inferiores para explorar en profundidad cada concepto explicado en las imágenes.</p>
+      </div>
+
+      <!-- Navegación por Pestañas (Tabs) -->
+      <div class="tabs-container">
+        <button class="tab-btn active" onclick="switchTab('tab-comparativa')">
+          <i class="fa-solid fa-scale-balanced"></i> Enseñanza vs Aprendizaje
+        </button>
+        <button class="tab-btn" onclick="switchTab('tab-virtuales')">
+          <i class="fa-solid fa-laptop-code"></i> Estrategias Virtuales
+        </button>
+        <button class="tab-btn" onclick="switchTab('tab-ruta')">
+          <i class="fa-solid fa-route"></i> Ruta de Estudio (5 Pasos)
+        </button>
+      </div>
+
+      <!-- PESTAÑA 1: COMPARATIVA ENSEÑANZA VS APRENDIZAJE -->
+      <div id="tab-comparativa" class="tab-content active">
+        <div class="comparison-grid">
+          
+          <div class="comp-card teacher">
+            <div class="comp-header">
+              <i class="fa-solid fa-chalkboard-user comp-icon" style="color: var(--primary);"></i>
+              <h3>Estrategia de Enseñanza</h3>
+            </div>
+            <ul class="comp-list">
+              <li><strong>Foco Principal:</strong> Docente y Contenido académico.</li>
+              <li><strong>Objetivo:</strong> Facilitar la transmisión de información y habilidades.</li>
+              <li><strong>Acciones Clave:</strong> Planificar clases, organizar contenidos, presentar exposiciones.</li>
+              <li><strong>Ejemplos Prácticos:</strong> Clases magistrales, demostraciones guiadas, explicaciones en pizarra.</li>
+            </ul>
+          </div>
+
+          <div class="comp-card student">
+            <div class="comp-header">
+              <i class="fa-solid fa-user-graduate comp-icon" style="color: var(--secondary);"></i>
+              <h3>Estrategia de Aprendizaje</h3>
+            </div>
+            <ul class="comp-list">
+              <li><strong>Foco Principal:</strong> Estudiante y Procesos cognitivos.</li>
+              <li><strong>Objetivo:</strong> Adquirir, procesar, retener y aplicar nuevos conocimientos.</li>
+              <li><strong>Acciones Clave:</strong> Analizar, sintetizar, organizar información y autoevaluarse.</li>
+              <li><strong>Ejemplos Prácticos:</strong> Mapas conceptuales, resúmenes, fichas de estudio, paráfrasis.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PESTAÑA 2: GLOSARIO DE ESTRATEGIAS VIRTUALES -->
+      <div id="tab-virtuales" class="tab-content">
+        <div class="strategy-grid">
+          
+          <div class="strat-box">
+            <div class="strat-icon"><i class="fa-solid fa-users-rectangle" style="color: #818cf8;"></i></div>
+            <h4 class="strat-title">Aprendizaje Colaborativo</h4>
+            <p class="strat-desc">Facilita el trabajo grupal en línea, promoviendo la construcción conjunta del conocimiento mediante métodos de interacción reflexiva.</p>
+          </div>
+
+          <div class="strat-box">
+            <div class="strat-icon"><i class="fa-solid fa-gamepad" style="color: #ec4899;"></i></div>
+            <h4 class="strat-title">Gamificación</h4>
+            <p class="strat-desc">Utiliza mecánicas de juego, puntos, insignias y niveles en línea para incrementar la motivación y el compromiso de los estudiantes.</p>
+          </div>
+
+          <div class="strat-box">
+            <div class="strat-icon"><i class="fa-solid fa-folder-open" style="color: #06b6d4;"></i></div>
+            <h4 class="strat-title">Estudio de Casos</h4>
+            <p class="strat-desc">Análisis de situaciones reales o hipotéticas complejas en entornos web para desarrollar pensamiento crítico y resolución de problemas.</p>
+          </div>
+
+          <div class="strat-box">
+            <div class="strat-icon"><i class="fa-solid fa-repeat" style="color: #10b981;"></i></div>
+            <h4 class="strat-title">Aula Invertida (Flipped Classroom)</h4>
+            <p class="strat-desc">Invierte la clase tradicional: el estudiante estudia la teoría en casa a través de videos/lecturas y en el aula virtual se aplica lo aprendido.</p>
+          </div>
+
+          <div class="strat-box">
+            <div class="strat-icon"><i class="fa-solid fa-mobile-screen-button" style="color: #f59e0b;"></i></div>
+            <h4 class="strat-title">Mobile Learning (M-Learning)</h4>
+            <p class="strat-desc">Uso de smartphones y tablets para acceder a micro-contenidos educativos en cualquier lugar y momento de forma flexible.</p>
+          </div>
+
+          <div class="strat-box">
+            <div class="strat-icon"><i class="fa-solid fa-video" style="color: #a855f7;"></i></div>
+            <h4 class="strat-title">Webinars / Seminarios Web</h4>
+            <p class="strat-desc">Clases y conferencias transmitidas en tiempo real o diferido con interacción vía chat, encuestas en vivo y preguntas abiertas.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PESTAÑA 3: RUTA DEL ESTUDIO EFICAZ -->
+      <div id="tab-ruta" class="tab-content">
+        <div class="stepper-wrapper">
+          
+          <div class="step-card active">
+            <div class="step-number">1</div>
+            <div class="step-info">
+              <h4>Definir el Tema</h4>
+              <p>Determinar claramente el objetivo de estudio y delimitar el área de conocimiento a abordar.</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-info">
+              <h4>Investigar Fuentes</h4>
+              <p>Recopilar material confiable: libros, artículos académicos, recursos digitales y archivos multimedia.</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-info">
+              <h4>Organizar la Información</h4>
+              <p>Estructurar los datos recopilados mediante esquemas, mapas mentales o cuadros sinópticos.</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <div class="step-info">
+              <h4>Aplicar Técnicas de Estudio</h4>
+              <p>Ejecutar técnicas activas: sub-rayado analítico, toma de notas, mnemotecnia y auto-explicación.</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">5</div>
+            <div class="step-info">
+              <h4>Revisar y Autoevaluar</h4>
+              <p>Comprobar la retención del conocimiento mediante repasos espaciados y resolución de ejercicios prácticos.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- CUESTIONARIO INTERACTIVO (QUIZ) -->
+    <section id="quiz" class="interactive-section">
+      <div class="section-header">
+        <h2 class="section-title"><i class="fa-solid fa-circle-question" style="color: var(--primary);"></i> Cuestionario de Autoevaluación</h2>
+        <p class="section-subtitle">Pon a prueba lo aprendido sobre las infografías respondiendo a las siguientes preguntas.</p>
+      </div>
+
+      <div class="quiz-container">
+        
+        <!-- Pregunta 1 -->
+        <div class="quiz-card" data-quiz-item>
+          <p class="quiz-question"><strong>1. ¿En qué estrategia de aprendizaje el estudiante estudia la teoría en casa y utiliza el tiempo de clase para resolver ejercicios prácticos?</strong></p>
+          <div class="quiz-options">
+            <button class="quiz-option-btn" onclick="checkAnswer(this, false)">A) Gamificación</button>
+            <button class="quiz-option-btn" onclick="checkAnswer(this, true)">B) Aula Invertida (Flipped Classroom)</button>
+            <button class="quiz-option-btn" onclick="checkAnswer(this, false)">C) Mobile Learning</button>
+          </div>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="quiz-card" data-quiz-item>
+          <p class="quiz-question"><strong>2. ¿Cuál es la diferencia principal entre las estrategias de enseñanza y las de aprendizaje?</strong></p>
+          <div class="quiz-options">
+            <button class="quiz-option-btn" onclick="checkAnswer(this, true)">A) Enseñanza se enfoca en el docente/contenido y Aprendizaje en el estudiante/proceso.</button>
+            <button class="quiz-option-btn" onclick="checkAnswer(this, false)">B) La enseñanza solo se usa en universidades y el aprendizaje en escuelas.</button>
+            <button class="quiz-option-btn" onclick="checkAnswer(this, false)">C) No existe ninguna diferencia entre ambas.</button>
+          </div>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="quiz-card" data-quiz-item>
+          <p class="quiz-question"><strong>3. ¿Cuál es el primer paso según la "Ruta del Estudio Eficaz"?</strong></p>
+          <div class="quiz-options">
+            <button class="quiz-option-btn" onclick="checkAnswer(this, false)">A) Aplicar mnemotecnia</button>
+            <button class="quiz-option-btn" onclick="checkAnswer(this, true)">B) Definir el tema y objetivos</button>
+            <button class="quiz-option-btn" onclick="checkAnswer(this, false)">C) Realizar el examen final</button>
+          </div>
+        </div>
+
+        <!-- Resultado Final del Quiz -->
+        <div id="quizResult" class="quiz-result">
+          <h3 id="quizScoreText" style="font-size: 1.5rem; margin-bottom: 0.5rem;">¡Excelente trabajo!</h3>
+          <p id="quizScoreDetail">Has obtenido una calificación destacada en pedagogía.</p>
+          <button class="btn btn-primary" style="margin-top: 1rem;" onclick="resetQuiz()">
+            <i class="fa-solid fa-rotate-right"></i> Reiniciar Quiz
+          </button>
+        </div>
+
+    <!-- SECCIÓN DE CREADORES Y EQUIPO AUTOR -->
+    <section id="creadores" class="interactive-section">
+      <div class="section-header">
+        <div class="hero-badge" style="margin-bottom: 0.75rem;">
+          <i class="fa-solid fa-users-gear"></i> Reconocimiento Académico
+        </div>
+        <h2 class="section-title">Equipo de Creadores y Autores</h2>
+        <p class="section-subtitle">Investigadores y diseñadores del contenido pedagógico y didáctico para entornos educativos.</p>
+      </div>
+
+      <div class="creators-grid">
+        
+        <!-- Creador 1 -->
+        <div class="creator-card">
+          <div class="creator-avatar">
+            <i class="fa-solid fa-user-graduate"></i>
+          </div>
+          <h3 class="creator-name">Erika Vicuña</h3>
+          <span class="creator-role">Investigadora Pedagógica</span>
+          <p class="creator-bio">Especialista en estrategias didácticas digitales y mediación tecnológica educativa.</p>
+        </div>
+
+        <!-- Creador 2 -->
+        <div class="creator-card">
+          <div class="creator-avatar alt-1">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <h3 class="creator-name">Joseynis Requena</h3>
+          <span class="creator-role">Diseñadora de Entornos Virtuales</span>
+          <p class="creator-bio">Experta en gamificación, aula invertida y herramientas de aprendizaje colaborativo.</p>
+        </div>
+
+        <!-- Creador 3 -->
+        <div class="creator-card">
+          <div class="creator-avatar alt-2">
+            <i class="fa-solid fa-book-bookmark"></i>
+          </div>
+          <h3 class="creator-name">Yoli Lugo</h3>
+          <span class="creator-role">Especialista en Cognición</span>
+          <p class="creator-bio">Investigadora de métodos de adquisición de conocimiento y técnicas de estudio eficaz.</p>
+        </div>
+
+        <!-- Creador 4 -->
+        <div class="creator-card">
+          <div class="creator-avatar alt-3">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+          <h3 class="creator-name">Julio Agostini</h3>
+          <span class="creator-role">Metodólogo Educativo</span>
+          <p class="creator-bio">Desarrollador de modelos de enseñanza-aprendizaje y esquemas didácticos avanzados.</p>
+        </div>
+
+        <!-- Creador 5 -->
+        <div class="creator-card">
+          <div class="creator-avatar alt-4">
+            <i class="fa-solid fa-chalkboard-user"></i>
+          </div>
+          <h3 class="creator-name">Pedro Lozada</h3>
+          <span class="creator-role">Coordinador Didáctico</span>
+          <p class="creator-bio">Asesor en diseño de seminarios web, m-learning y evaluación pedagógica continua.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL LIGHTBOX PARA ZOOM DE IMÁGENES -->
+  <div id="lightboxModal" class="modal" onclick="closeLightbox(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeLightbox()" title="Cerrar (Esc)">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-img-container">
+        <img id="lightboxImg" src="" alt="Infografía Ampliada" class="modal-img">
+      </div>
+      <p id="lightboxCaption" class="modal-caption"></p>
+    </div>
+  </div>
+
+  <!-- CONTENEDOR TOAST DE NOTIFICACIONES -->
+  <div id="toast" class="toast"></div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Desarrollado para el <strong>Portafolio Educativo de Estrategias Pedagógicas</strong> &copy; 2026.</p>
+    <p style="font-size: 0.8rem; margin-top: 0.4rem; opacity: 0.7;">Tecnologías utilizadas: HTML5 • CSS3 • JavaScript (ES6+)</p>
+  </footer>
+
+  <!-- Custom Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
