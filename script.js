@@ -170,7 +170,7 @@ function switchTab(tabId) {
    -------------------------------------------------------------------------- */
 let quizScore = 0;
 let answeredQuestions = 0;
-const totalQuestions = 3;
+const totalQuestions = 4;
 
 function checkAnswer(button, isCorrect) {
   const parentOptions = button.closest('.quiz-options');
@@ -201,17 +201,18 @@ function showQuizResult() {
   const scoreText = document.getElementById('quizScoreText');
   const scoreDetail = document.getElementById('quizScoreDetail');
 
-  const percentage = Math.round((quizScore / totalQuestions) * 100);
-
-  if (quizScore === 3) {
-    scoreText.textContent = '🎉 ¡Puntaje Perfecto! (3/3)';
-    scoreDetail.textContent = '¡Felicidades! Has comprendido perfectamente todas las estrategias pedagógicas.';
+  if (quizScore === 4) {
+    scoreText.textContent = '🎉 ¡Puntaje Perfecto! (4/4)';
+    scoreDetail.textContent = '¡Felicidades! Has comprendido perfectamente todas las estrategias didácticas y pedagógicas UNEG.';
+  } else if (quizScore === 3) {
+    scoreText.textContent = '👍 ¡Excelente Resultado! (3/4)';
+    scoreDetail.textContent = 'Tienes un excelente dominio de los conceptos pedagógicos y entornos virtuales.';
   } else if (quizScore === 2) {
-    scoreText.textContent = '👍 ¡Muy Buen Resultado! (2/3)';
-    scoreDetail.textContent = 'Tienes un gran dominio de los conceptos didácticos y virtuales.';
+    scoreText.textContent = '📖 Buen Resultado (2/4)';
+    scoreDetail.textContent = 'Demuestras una buena base en estrategias didácticas, aunque puedes reforzar algunos conceptos.';
   } else {
-    scoreText.textContent = '📚 Buen Intento (1/3 o 0/3)';
-    scoreDetail.textContent = 'Te recomendamos revisar nuevamente las infografías para afianzar conceptos.';
+    scoreText.textContent = '📚 Repaso Recomendado (1/4 o 0/4)';
+    scoreDetail.textContent = 'Te sugerimos explorar nuevamente el desglose conceptual y las infografías para afianzar saberes.';
   }
 
   resultCard.classList.add('show');
