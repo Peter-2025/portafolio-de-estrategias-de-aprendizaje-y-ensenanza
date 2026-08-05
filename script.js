@@ -247,3 +247,37 @@ function showToast(message, duration = 3000) {
     toast.classList.remove('show');
   }, duration);
 }
+
+/* ==========================================================================
+   EMAIL POPUP
+   -------------------------------------------------------------------------- */
+function toggleEmailPopup(btn) {
+  const wrapper = btn.closest('.email-popup-wrapper');
+  const popup = wrapper.querySelector('.email-popup');
+  const isOpen = popup.classList.contains('active');
+
+  // Close all other open popups
+  document.querySelectorAll('.email-popup.active').forEach(p => p.classList.remove('active'));
+
+  if (!isOpen) {
+    popup.classList.add('active');
+  }
+}
+
+function copyEmail(email, btn) {
+  navigator.clipboard.writeText(email).then(() => {
+    btn.innerHTML = '<i class="fa-solid fa-check"></i> ¡Copiado!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.innerHTML = '<i class="fa-solid fa-copy"></i> Copiar';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+
+// Close email popups when clicking outside
+document.addEventListener('click', function (e) {
+  if (!e.target.closest('.email-popup-wrapper')) {
+    document.querySelectorAll('.email-popup.active').forEach(p => p.classList.remove('active'));
+  }
+});
